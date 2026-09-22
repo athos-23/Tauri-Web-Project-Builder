@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Project Builder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div>
+            <div class="eyebrow">TAURI PROJECT GENERATOR</div>
+
+            <h1>Web Project Builder</h1>
+
+            <p>
+                Trasforma una web app HTML/CSS/JS in un progetto
+                Tauri pronto per GitHub.
+            </p>
+        </div>
+
+        <div class="version">
+            V1
+        </div>
+    </header>
+
+
+    <!-- APP INFORMATION -->
+
+    <section class="card">
+
+        <h2>Informazioni applicazione</h2>
+
+        <div class="grid">
+
+            <div class="field">
+
+                <label for="name">
+                    Nome applicazione
+                </label>
+
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="My Awesome App"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="appVersion">
+                    Versione
+                </label>
+
+                <input
+                    id="appVersion"
+                    type="text"
+                    value="1.0.0"
+                >
+
+            </div>
+
+
+            <div class="field full">
+
+                <label for="developer">
+                    Sviluppatore
+                </label>
+
+                <input
+                    id="developer"
+                    type="text"
+                    placeholder="Il tuo nome"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WEB APP -->
+
+    <section class="card">
+
+        <h2>Web App</h2>
+
+        <div
+            class="drop-area"
+            id="dropArea"
+        >
+
+            <div class="folder-icon">
+                📁
+            </div>
+
+            <h3>
+                Trascina qui la tua Web App
+            </h3>
+
+            <p>
+                oppure seleziona manualmente la cartella
+            </p>
+
+
+            <button
+                id="selectFolder"
+                type="button"
+            >
+                Seleziona cartella
+            </button>
+
+
+            <input
+                id="folderInput"
+                type="file"
+                webkitdirectory
+                directory
+                multiple
+                hidden
+            >
+
+
+            <div
+                id="folderName"
+                class="muted"
+            >
+                Nessuna cartella selezionata
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ICON -->
+
+    <section class="card">
+
+        <h2>Icona</h2>
+
+        <div class="icon-section">
+
+            <div
+                id="iconPreview"
+                class="icon-preview"
+            >
+                <span>★</span>
+            </div>
+
+
+            <div>
+
+                <p>
+                    Se vuoi puoi fornire una PNG.
+                    Il Builder la userà per generare
+                    le icone dell'app.
+                </p>
+
+
+                <button
+                    id="selectIcon"
+                    type="button"
+                >
+                    Seleziona PNG
+                </button>
+
+
+                <div
+                    id="iconName"
+                    class="muted"
+                >
+                    Nessuna icona
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WINDOWS -->
+
+    <section class="card">
+
+        <h2>Windows</h2>
+
+
+        <label class="option">
+
+            <input
+                id="installer"
+                type="checkbox"
+                checked
+            >
+
+            <div>
+
+                <strong>
+                    Installer
+                </strong>
+
+                <small>
+                    Genera il normale installer
+                    Windows.
+                </small>
+
+            </div>
+
+        </label>
+
+
+        <label class="option">
+
+            <input
+                id="portable"
+                type="checkbox"
+                checked
+            >
+
+            <div>
+
+                <strong>
+                    Portable
+                </strong>
+
+                <small>
+                    Genera anche l'eseguibile
+                    portable.
+                </small>
+
+            </div>
+
+        </label>
+
+    </section>
+
+
+    <!-- ACTION -->
+
+    <div class="bottom">
+
+        <div id="status">
+            Pronto.
+        </div>
+
+
+        <button
+            id="generate"
+            class="primary"
+            type="button"
+        >
+            Genera progetto
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ZIP LIBRARY -->
+
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+
+<!-- APP -->
+
+<script src="app.js"></script>
+
+</body>
+</html>

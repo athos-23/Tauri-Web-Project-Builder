@@ -1,0 +1,26 @@
+[package]
+name = "tauri_web_project_builder"
+version = "1.0.0"
+description = "Tauri-Web-Project-Builder"
+authors = ["Tauri-Web-Project-Builder"]
+edition = "2021"
+
+[lib]
+name = "tauri_web_project_builder_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["custom-protocol"] }
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
