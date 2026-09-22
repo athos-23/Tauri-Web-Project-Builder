@@ -26,7 +26,7 @@ Generated with Web Project Builder.
 
 ## Output
 
-- Windows Portable (.exe)
+- Windows Portable executable (.exe)
 
 ## Local development
 

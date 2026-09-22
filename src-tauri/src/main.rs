@@ -5,6 +5,6 @@
 
 fn main() {
 
-    web_project_builder_lib::run();
+    tauri_web_project_builder_lib::run();
 
 }
